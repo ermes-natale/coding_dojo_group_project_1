@@ -20,7 +20,7 @@ def process(request):
             user = User.objects.filter(email = request.POST['email'])
             logged_user = user[0]
             request.session['userid'] = logged_user.id
-            request.session['username'] = logged_user.name
+            request.session['username'] = logged_user.first_name
             return redirect("/")
     
     if request.POST['which_form'] == 'login':
