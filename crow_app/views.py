@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, HttpResonse
 from login_and_registration_app.models import User
 
 def index(request):
-    if 'username' in request.session:
+    if 'userid' in request.session:
         context ={
             'user': User.objects.get(id=request.session['userid']),
         }
