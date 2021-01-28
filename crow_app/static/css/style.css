@@ -1,9 +1,9 @@
 head {
-    
+
 }
 main {
-    font-family: "Comic Sans MS", cursive, sans-serif;
-
+margin: auto;
+padding: 50px;
 
 }
 
@@ -11,4 +11,11 @@ footer {
     margin: auto;
     text-align: center;
 
+}
+
+.post {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    text-transform: uppercase;
+    margin: auto;
+    padding: 20px;
 }

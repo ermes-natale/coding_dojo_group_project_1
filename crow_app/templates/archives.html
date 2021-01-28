@@ -8,13 +8,20 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">    
 </head>
 <body>
+    <!--<img src="{% static 'images/image.jpg' %}" />-->
     <header>
         <h1></h1>
 <h2></h2>
 <h3><a href="/logout"><button>LOGOUT</button></a></h3>
     </header>
     <main>
-all the archives
+<h1>ARCHIVES</h1>
+{% for x in archives %}
+<div class="post">
+
+</div>
+
+{% endfor %}
     </main>
     <footer>
         developed by Ermes & Quinn

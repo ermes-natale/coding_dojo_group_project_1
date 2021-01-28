@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">    
 </head>
 <body>
+    <!--<img src="{% static 'images/image.jpg' %}" />-->
     <header>
 <h1></h1>
 <h2></h2>
@@ -15,10 +16,18 @@
     </header>
     <main>
         <div>
-            POST
+            CURRENT POST
+            {{ STUFF goes here }}
+            <form action="/updoot" method="post">
+            <button type="submit">CAW</button>
+            </form>
         </div>
         <div>
-            CREATE POST
+            <h1>CREATE POST</h1>
+            <form action="/create_post" method="post">
+            <input type="text" name="text" id="" placeholder="SHARE YOU IMPORTANT OPINION">
+            <BUTton type="submit"></BUTton>
+            </form>
         </div>
         <a href="/archives"><button>ARCHIVE</button></a>
     </main>
