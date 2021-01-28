@@ -20,4 +20,5 @@ def updoot(request):
     return HttpResonse("this works, too")
 
 def logout(request):
-    
+    request.session.clear()
+    return redirect("/")
