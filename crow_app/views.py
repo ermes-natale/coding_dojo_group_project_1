@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from login_and_registration_app.models import User
 
 def index(request):
     if 'username' in request.session:
