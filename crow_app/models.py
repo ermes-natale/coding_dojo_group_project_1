@@ -10,7 +10,8 @@ class PostManager(models.Manager):
         errors = {}
         if len(postData['text']) < 1:
             errors['text'] = "Content required"
-
+        return errors   
+    
 # Create your models here.
 class Post(models.Model):
     text = models.CharField(max_length=144)
