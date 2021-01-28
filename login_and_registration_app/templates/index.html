@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- load Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="container-fluid bg-primary row">
+        <h1 class="col text-center">Crow</h1>
+        <a class="col text-left my-auto">Home</a>
+        <a class="col text-right my-auto">sign-in</a>
+    </header>
+    <div class="container mt-5">
+        {% if messages %}
+    <ul class="messages">
+            {% for message in messages %}         
+        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+            {{ message }}
+        </li>
+            {% endfor %}
+    </ul>
+    {% endif %}
+        <div class="row">
+            <form class="col-5 mr-5 pr-5 border pb-3" action="/login/process" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="which_form" value="register" />
+                <h4>Register</h4>
+                
+                <label class="row  ml-3 mt-3" id="first_name">First Name:</label>
+                <input class="col  ml-3" type="text" name="first_name" id="first_name">
+    
+                <label class="row  ml-3 mt-3" id="last_name">Last Name:</label>
+                <input class="col  ml-3" type="text" name="last_name" id="last_name">
+    
+                <label class="row  ml-3 mt-3" id="email">Email Address:</label>
+                <input class="col ml-3" type="text" name="email" id="email">
+
+                <label class="row  ml-3 mt-3" id="password">Password:</label>
+                <input class="col  ml-3" type="password" name="password" id="password">
+    
+                <label class="row  ml-3 mt-3" id="conpass">Confirm Password:</label>
+                <input class="col  ml-3" type="password" name="conpass" id="conpass">
+
+                <button class="row ml-auto mt-4" type="submit">Register</button>
+            </form> 
+            <form class="col-5 ml-5 pr-5 mb-auto border pb-3" action="/login/process" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="which_form" value="login" />
+    
+                <h4>Login</h4>
+                <label class="row  ml-3 mt-3" id="email">Email Address:</label>
+                <input class="col ml-3" type="text" name="email" id="email">
+
+                <label class="row  ml-3 mt-3" id="password">Password:</label>
+                <input class="col  ml-3" type="password" name="password" id="password">
+                
+                <button class="row ml-auto mt-4" type="submit">Login</button>
+            </form>
+        </div>
+        </div>
+</body>
+</html>
