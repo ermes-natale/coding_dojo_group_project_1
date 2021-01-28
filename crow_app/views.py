@@ -7,7 +7,7 @@ def index(request):
         post = allposts[0];
         context ={
             'user': User.objects.get(id=request.session['userid']),
-            'post': post
+            'post': post,
         }
         return render(request, 'home.html', context)
     return redirect("/login")
